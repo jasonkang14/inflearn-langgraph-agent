@@ -1044,6 +1044,7 @@ dependencies = [
     { name = "langchain-core" },
     { name = "langchain-experimental" },
     { name = "langchain-google-community" },
+    { name = "langchain-mcp-adapters" },
     { name = "langchain-openai" },
     { name = "langchain-text-splitters" },
     { name = "langdetect" },
@@ -1258,9 +1259,10 @@ requires-dist = [
     { name = "langchain", specifier = "==0.3.13" },
     { name = "langchain-chroma", specifier = "==0.1.4" },
     { name = "langchain-community", specifier = "==0.3.13" },
-    { name = "langchain-core", specifier = "==0.3.28" },
+    { name = "langchain-core", specifier = ">=0.3.56" },
     { name = "langchain-experimental", specifier = "==0.3.4" },
     { name = "langchain-google-community", specifier = "==2.0.3" },
+    { name = "langchain-mcp-adapters", specifier = ">=0.0.9" },
     { name = "langchain-openai", specifier = "==0.2.14" },
     { name = "langchain-text-splitters", specifier = "==0.3.4" },
     { name = "langdetect", specifier = "==1.0.9" },
@@ -1666,7 +1668,7 @@ wheels = [
 
 [[package]]
 name = "langchain-core"
-version = "0.3.28"
+version = "0.3.56"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jsonpatch" },
@@ -1677,9 +1679,9 @@ dependencies = [
     { name = "tenacity" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/de/f2/1787f9e7fcf6bee70f7a8f488ee95b814408706ab35d61dbba279fbe7361/langchain_core-0.3.28.tar.gz", hash = "sha256:407f7607e6b3c0ebfd6094da95d39b701e22e59966698ef126799782953e7f2c", size = 330743 }
+sdist = { url = "https://files.pythonhosted.org/packages/2c/d3/17c307c51eab97602dc30181909d835bcfb202af95a05e15b7f12d5d0e02/langchain_core-0.3.56.tar.gz", hash = "sha256:de896585bc56e12652327dcd195227c3739a07e86e587c91a07101e0df11dffe", size = 556457 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9a/bf/07e63d4b4c41aa49daf4a4499e8010928ce8545469f0265544f925c95fff/langchain_core-0.3.28-py3-none-any.whl", hash = "sha256:a02f81ca53a8eed757133797e5a602ca80c1324bbecb0c5d86ef7bd3d6625372", size = 411553 },
+    { url = "https://files.pythonhosted.org/packages/ca/fe/f8b2c32122cc2c842169164708fedc65db693daefcdaa9e9863d44b65b15/langchain_core-0.3.56-py3-none-any.whl", hash = "sha256:a20c6aca0fa0da265d96d3b14a5a01828ac5d2d9d27516434873d76f2d4839ed", size = 437218 },
 ]
 
 [[package]]
@@ -1710,6 +1712,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/1c/2a/c390e327d598336d775088b896bad4af8e305752df14626467d644bd3fbf/langchain_google_community-2.0.3.tar.gz", hash = "sha256:2d77f8c9bd6da546b9e3f92517441abfcb2730f9b5beaff17a36d7bdb5687bbc", size = 56035 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/eb/3e/58b756ee60dfbfaaee19bdd665c146b8756412dfaf8fdfe2bd4d5bd682ce/langchain_google_community-2.0.3-py3-none-any.whl", hash = "sha256:feb6bcccf9e2c5d6e8ef029a1900ef5fa1ee0cd5499d555c603d79c1b7319597", size = 77636 },
+]
+
+[[package]]
+name = "langchain-mcp-adapters"
+version = "0.0.9"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "langchain-core" },
+    { name = "mcp" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/1a/48/dc5544f5b919b4ff9e736ec8db71217431c585c5c87acd3ab7558cc06cee/langchain_mcp_adapters-0.0.9.tar.gz", hash = "sha256:9ecd10fc420d98b3c14115bbca3174575e0a4ea29bd125ef39d11191a72ff1a1", size = 14827 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6f/24/3a4be149e8db15936533357f987b4b89c74c7f039427d6229679dbcc53b9/langchain_mcp_adapters-0.0.9-py3-none-any.whl", hash = "sha256:7c3dedd7830de826f418706c8a2fe388afcf8daf2037a1b39d1e065a5eacb082", size = 10065 },
 ]
 
 [[package]]
@@ -1921,6 +1936,25 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/99/5b/a36a337438a14116b16480db471ad061c36c3694df7c2084a0da7ba538b7/matplotlib_inline-0.1.7.tar.gz", hash = "sha256:8423b23ec666be3d16e16b60bdd8ac4e86e840ebd1dd11a30b9f117f2fa0ab90", size = 8159 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8f/8e/9ad090d3553c280a8060fbf6e24dc1c0c29704ee7d1c372f0c174aa59285/matplotlib_inline-0.1.7-py3-none-any.whl", hash = "sha256:df192d39a4ff8f21b1895d72e6a13f5fcc5099f00fa84384e0ea28c2cc0653ca", size = 9899 },
+]
+
+[[package]]
+name = "mcp"
+version = "1.6.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anyio" },
+    { name = "httpx" },
+    { name = "httpx-sse" },
+    { name = "pydantic" },
+    { name = "pydantic-settings" },
+    { name = "sse-starlette" },
+    { name = "starlette" },
+    { name = "uvicorn" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/95/d2/f587cb965a56e992634bebc8611c5b579af912b74e04eb9164bd49527d21/mcp-1.6.0.tar.gz", hash = "sha256:d9324876de2c5637369f43161cd71eebfd803df5a95e46225cab8d280e366723", size = 200031 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/10/30/20a7f33b0b884a9d14dd3aa94ff1ac9da1479fe2ad66dd9e2736075d2506/mcp-1.6.0-py3-none-any.whl", hash = "sha256:7bd24c6ea042dbec44c754f100984d186620d8b841ec30f1b19eda9b93a634d0", size = 76077 },
 ]
 
 [[package]]
@@ -3086,6 +3120,19 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/a1/95/81babb6089938680dfe2cd3f88cd3fd39cccd1543b7cb603b21ad881bff1/SQLAlchemy-2.0.36-cp313-cp313-win32.whl", hash = "sha256:0572f4bd6f94752167adfd7c1bed84f4b240ee6203a95e05d1e208d488d0d436", size = 2060439 },
     { url = "https://files.pythonhosted.org/packages/c1/ce/5f7428df55660d6879d0522adc73a3364970b5ef33ec17fa125c5dbcac1d/SQLAlchemy-2.0.36-cp313-cp313-win_amd64.whl", hash = "sha256:8c78ac40bde930c60e0f78b3cd184c580f89456dd87fc08f9e3ee3ce8765ce88", size = 2084574 },
     { url = "https://files.pythonhosted.org/packages/b8/49/21633706dd6feb14cd3f7935fc00b60870ea057686035e1a99ae6d9d9d53/SQLAlchemy-2.0.36-py3-none-any.whl", hash = "sha256:fddbe92b4760c6f5d48162aef14824add991aeda8ddadb3c31d56eb15ca69f8e", size = 1883787 },
+]
+
+[[package]]
+name = "sse-starlette"
+version = "2.3.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anyio" },
+    { name = "starlette" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/86/35/7d8d94eb0474352d55f60f80ebc30f7e59441a29e18886a6425f0bccd0d3/sse_starlette-2.3.3.tar.gz", hash = "sha256:fdd47c254aad42907cfd5c5b83e2282be15be6c51197bf1a9b70b8e990522072", size = 17499 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5d/20/52fdb5ebb158294b0adb5662235dd396fc7e47aa31c293978d8d8942095a/sse_starlette-2.3.3-py3-none-any.whl", hash = "sha256:8b0a0ced04a329ff7341b01007580dd8cf71331cc21c0ccea677d500618da1e0", size = 10235 },
 ]
 
 [[package]]

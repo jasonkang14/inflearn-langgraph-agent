@@ -277,6 +277,7 @@ async def house_tax_system_prompt():
     사용자에 질문에 따른 공정시장가액비율을 파악해야 합니다.
     이 세가지를 파악하고 나면, 종합부동산세를 계산해주세요.
     """
+    # MCP에는 시스템 프롬프트가 존재하지 않음(2024년 5월기준)
     return base.UserMessage(content=system_message_content)
 
 ###########################################

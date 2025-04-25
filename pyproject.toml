@@ -109,6 +109,7 @@ dependencies = [
     "markupsafe==3.0.2",
     "marshmallow==3.23.2",
     "matplotlib-inline==0.1.7",
+    "mcp[cli]>=1.6.0",
     "mdurl==0.1.2",
     "mmh3==5.0.1",
     "monotonic==1.6",

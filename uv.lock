@@ -1059,6 +1059,7 @@ dependencies = [
     { name = "markupsafe" },
     { name = "marshmallow" },
     { name = "matplotlib-inline" },
+    { name = "mcp", extra = ["cli"] },
     { name = "mdurl" },
     { name = "mmh3" },
     { name = "monotonic" },
@@ -1277,6 +1278,7 @@ requires-dist = [
     { name = "markupsafe", specifier = "==3.0.2" },
     { name = "marshmallow", specifier = "==3.23.2" },
     { name = "matplotlib-inline", specifier = "==0.1.7" },
+    { name = "mcp", extras = ["cli"], specifier = ">=1.6.0" },
     { name = "mdurl", specifier = "==0.1.2" },
     { name = "mmh3", specifier = "==5.0.1" },
     { name = "monotonic", specifier = "==1.6" },
@@ -1955,6 +1957,12 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/95/d2/f587cb965a56e992634bebc8611c5b579af912b74e04eb9164bd49527d21/mcp-1.6.0.tar.gz", hash = "sha256:d9324876de2c5637369f43161cd71eebfd803df5a95e46225cab8d280e366723", size = 200031 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/10/30/20a7f33b0b884a9d14dd3aa94ff1ac9da1479fe2ad66dd9e2736075d2506/mcp-1.6.0-py3-none-any.whl", hash = "sha256:7bd24c6ea042dbec44c754f100984d186620d8b841ec30f1b19eda9b93a634d0", size = 76077 },
+]
+
+[package.optional-dependencies]
+cli = [
+    { name = "python-dotenv" },
+    { name = "typer" },
 ]
 
 [[package]]

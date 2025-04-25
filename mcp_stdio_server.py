@@ -103,7 +103,7 @@ def get_market_value_rate_search():
         str: 세금 공제액 (예: '9억원', '12억원')
     """
 )
-async def tax_deductible_tool(question: str) -> str:
+def tax_deductible_tool(question: str) -> str:
     # 세금 공제 체인 구성
     tax_deductible_chain = (
         {"context": retriever | format_docs, "question": RunnablePassthrough()}
@@ -137,8 +137,8 @@ async def tax_deductible_tool(question: str) -> str:
         | small_llm
         | StrOutputParser()
     )
-    tax_deductible_response = await tax_deductible_chain.ainvoke(deductible_question)
-    tax_deductible = await user_deductible_chain.ainvoke({
+    tax_deductible_response = tax_deductible_chain.invoke(deductible_question)
+    tax_deductible = user_deductible_chain.invoke({
         'tax_deductible_response': tax_deductible_response, 
         'question': question
     })
@@ -157,7 +157,7 @@ async def tax_deductible_tool(question: str) -> str:
         str: 과세표준 계산 공식
     """
 )
-async def tax_base_tool() -> str:
+def tax_base_tool() -> str:
     tax_base_chain = (
         {"context": retriever | format_docs, "question": RunnablePassthrough()}
         | rag_prompt
@@ -166,7 +166,7 @@ async def tax_base_tool() -> str:
     )
 
     tax_base_question = '주택에 대한 종합부동산세 과세표준을 계산하는 방법은 무엇인가요? 수식으로 표현해서 수식만 반환해주세요'
-    tax_base_response = await tax_base_chain.ainvoke(tax_base_question)
+    tax_base_response = tax_base_chain.invoke(tax_base_question)
     return tax_base_response
 
 
@@ -186,7 +186,7 @@ async def tax_base_tool() -> str:
         str: 공정시장가액비율 백분율 (예: '60%', '45%')
     """
 )
-async def market_value_rate_tool(question: str) -> str:
+def market_value_rate_tool(question: str) -> str:
     market_value_rate_prompt = PromptTemplate.from_template("""아래 [Context]는 공정시장가액비율에 관한 내용입니다. 
     당신에게 주어진 공정시장가액비율에 관한 내용을 기반으로, 사용자의 상황에 대한 공정시장가액비율을 알려주세요.
     별도의 설명 없이 공정시장가액비율만 반환해주세요.
@@ -206,7 +206,7 @@ async def market_value_rate_tool(question: str) -> str:
     )
 
     market_value_rate_search = get_market_value_rate_search()
-    market_value_rate = await market_value_rate_chain.ainvoke({
+    market_value_rate = market_value_rate_chain.invoke({
         'context': market_value_rate_search, 
         'question': question
     })
@@ -233,7 +233,7 @@ async def market_value_rate_tool(question: str) -> str:
         str: 설명이 포함된 최종 세금 계산액
     """
 )
-async def house_tax_tool(tax_base_question: str, market_value_rate: str, tax_deductible: str, question: str) -> str:
+def house_tax_tool(tax_base_question: str, market_value_rate: str, tax_deductible: str, question: str) -> str:
 
     house_tax_prompt = ChatPromptTemplate.from_messages([
         ('system', f'''과세표준 계산방법: {tax_base_question}
@@ -256,7 +256,7 @@ async def house_tax_tool(tax_base_question: str, market_value_rate: str, tax_ded
         | StrOutputParser()
     )
 
-    house_tax = await house_tax_chain.ainvoke(question)
+    house_tax = house_tax_chain.invoke(question)
     return house_tax
 
 

@@ -269,7 +269,7 @@ def house_tax_tool(tax_base_question: str, market_value_rate: str, tax_deductibl
     name="house_tax_system_prompt",
     description="""종합부동산세 계산 프롬프트"""
 )
-async def house_tax_system_prompt():
+def house_tax_system_prompt():
     system_message_content = """당신의 역할은 주택에 대한 종합부동산세를 계산하는 것입니다. 
     사용자의 질문이 들어오면, 사용자의 질문을 바탕으로 종합부동산세를 계산해주세요.
     종합부동산세를 계산하기 위해서는 과세표준을 어떻게 계산할지 파악해야하고, 

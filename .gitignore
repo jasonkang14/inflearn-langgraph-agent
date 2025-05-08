@@ -1,7 +1,7 @@
 .env
 .python-version
 *_collection_*/
-*_collection/
+# *_collection/
 __pycache__/
 google/
 .DS_Store

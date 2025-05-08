@@ -1,4 +1,4 @@
-# LangGraph를 활용한 LLM Agent 개발
+# LangGraph를 활용한 AI Agent 개발
 
 - 강의 목차 중 코드 작성을 하지 않는 회차는 포함되지 않았습니다
 
@@ -22,6 +22,12 @@
 - 3.5 Agent의 히스토리를 관리하는 방법
 - 3.6 human-in-the-loop: 사람이 Agent와 소통하는 방법
 - 3.7 "찐" Multi-Agent System (feat. create_react_agent)
+
+### 5. Model Context Protocol(MCP)
+- 5.2 커스텀 MCP 서버 개발방법.py
+- 5.3.1 공식문서의 MCP Client 활용방법 I (feat. MultiServerMCPClient).ipynb
+- 5.3.2 공식문서의 MCP Client 활용방법 II (feat. ClientSession).ipynb
+- 5.4 공식문서에 없는 MCP Client 활용방법.ipynb
 
 ## 시작하기
 

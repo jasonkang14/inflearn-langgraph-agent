@@ -94,7 +94,7 @@ dependencies = [
     "langchain-core>=0.3.56",
     "langchain-experimental==0.3.4",
     "langchain-google-community==2.0.3",
-    "langchain-mcp-adapters>=0.0.9",
+    "langchain-mcp-adapters>=0.1.0",
     "langchain-openai==0.2.14",
     "langchain-text-splitters==0.3.4",
     "langdetect==1.0.9",

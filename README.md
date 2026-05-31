@@ -1,5 +1,9 @@
 # LangGraph를 활용한 AI Agent 개발
 
+[![랭그래프를 활용한 LLM 에이전트 개발 (feat. MCP) 강의 썸네일](https://cdn.inflearn.com/public/files/courses/335334/cover/01jsscts2737mjts7sw05264g5?w=736)](https://inf.run/FcsF3)
+
+> 👆 썸네일을 클릭하면 인프런 강의 페이지로 이동합니다
+
 - 강의 목차 중 코드 작성을 하지 않는 회차는 포함되지 않았습니다
 
 ## 목차
